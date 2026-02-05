@@ -40,15 +40,15 @@ PRODUCTION_BASE_URL = "https://pay.pesapal.com/v3/api"
 SANDBOX_BASE_URL = "https://cybqa.pesapal.com/pesapalv3/api"
 
 # Production Credentials - can be overridden with environment variables
-CONSUMER_KEY = os.getenv("PESAPAL_CONSUMER_KEY", "xlPKBxhNDBlPJLrhhaUvmLbhy/TNfPow")
-CONSUMER_SECRET = os.getenv("PESAPAL_CONSUMER_SECRET", "xSmpeJVxq2MR/AJwA1q5wYzKgM4=")
+CONSUMER_KEY = os.getenv("PESAPAL_CONSUMER_KEY")
+CONSUMER_SECRET = os.getenv("PESAPAL_CONSUMER_SECRET")
 
 # Use production by default, can be overridden with environment variable
 USE_SANDBOX = os.getenv("PESAPAL_USE_SANDBOX", "false").lower() == "true"
 BASE_URL = SANDBOX_BASE_URL if USE_SANDBOX else PRODUCTION_BASE_URL
 
 # Default IPN ID (can be configured via environment variable)
-DEFAULT_IPN_ID = os.getenv("PESAPAL_IPN_ID", "70ebc157-9160-4190-b873-db09599ff08b")
+DEFAULT_IPN_ID = os.getenv("PESAPAL_IPN_ID")
 
 
 class PesapalSTK:
